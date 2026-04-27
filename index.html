@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mr. Puff - No-Vet Care Plan</title>
+<meta name="description" content="DIY OTC care plan for an ear-tipped community cat in Pahoa, HI. Vaccines, parasites, decontamination, and Maine Coon protection without a vet visit.">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Fraunces:wght@400;500;600;700;800;900&display=swap');
+
+  :root {
+    --bg-base: #0a0a0f;
+    --bg-elevated: #12121a;
+    --bg-card: #161620;
+    --bg-card-hover: #1c1c28;
+    --border-subtle: #232334;
+    --border-strong: #2e2e45;
+    --text-primary: #f4f4f8;
+    --text-secondary: #b8b8c8;
+    --text-muted: #6e6e85;
+    --accent-amber: #fbbf24;
+    --accent-amber-dim: #d97706;
+    --accent-amber-glow: rgba(251, 191, 36, 0.15);
+    --accent-cyan: #67e8f9;
+    --accent-cyan-dim: #06b6d4;
+    --accent-rose: #fb7185;
+    --accent-emerald: #34d399;
+    --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.4), 0 8px 24px rgba(0, 0, 0, 0.2);
+    --shadow-glow: 0 0 60px rgba(251, 191, 36, 0.08);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg-base);
+    color: var(--text-primary);
+    line-height: 1.65;
+    font-feature-settings: 'ss01', 'cv11';
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Subtle grain texture for warmth */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    background-image:
+      radial-gradient(circle at 20% 10%, rgba(251, 191, 36, 0.04) 0%, transparent 40%),
+      radial-gradient(circle at 80% 50%, rgba(103, 232, 249, 0.03) 0%, transparent 40%),
+      radial-gradient(circle at 50% 90%, rgba(251, 113, 133, 0.025) 0%, transparent 40%);
+  }
+
+  /* HERO */
+  .hero {
+    position: relative;
+    padding: 5rem 1.5rem 3.5rem;
+    text-align: center;
+    border-bottom: 1px solid var(--border-subtle);
+    overflow: hidden;
+    z-index: 2;
+  }
+
+  .hero::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--accent-amber-glow), transparent);
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.35rem 0.85rem;
+    background: var(--accent-amber-glow);
+    color: var(--accent-amber);
+    border: 1px solid rgba(251, 191, 36, 0.25);
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 1.5rem;
+  }
+
+  .eyebrow::before {
+    content: "●";
+    color: var(--accent-amber);
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  .hero h1 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(2.5rem, 7vw, 4.5rem);
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    line-height: 1.05;
+    margin-bottom: 1.25rem;
+    background: linear-gradient(180deg, #ffffff 0%, #b8b8c8 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .hero h1 .accent {
+    background: linear-gradient(135deg, var(--accent-amber) 0%, var(--accent-amber-dim) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-style: italic;
+    font-weight: 600;
+  }
+
+  .hero p.lede {
+    font-size: clamp(1.05rem, 2vw, 1.2rem);
+    color: var(--text-secondary);
+    max-width: 640px;
+    margin: 0 auto;
+    font-weight: 400;
+  }
+
+  .hero-meta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    flex-wrap: wrap;
+  }
+
+  .hero-meta span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  /* LAYOUT */
+  .layout {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 4rem;
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 3rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  @media (max-width: 880px) {
+    .layout { grid-template-columns: 1fr; gap: 1.5rem; padding: 2rem 1.25rem 3rem; }
+    .toc { position: static !important; }
+  }
+
+  /* TOC */
+  .toc {
+    position: sticky;
+    top: 2rem;
+    align-self: start;
+    font-size: 0.85rem;
+  }
+
+  .toc h4 {
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
+
+  .toc ul { list-style: none; }
+
+  .toc li { margin-bottom: 0.45rem; }
+
+  .toc a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    display: block;
+    padding: 0.2rem 0.6rem;
+    border-left: 2px solid var(--border-subtle);
+    transition: all 0.15s ease;
+  }
+
+  .toc a:hover {
+    color: var(--accent-amber);
+    border-left-color: var(--accent-amber);
+    background: var(--accent-amber-glow);
+  }
+
+  /* CONTENT */
+  .content { min-width: 0; }
+
+  /* PRIORITY CARD - the headline */
+  .priority {
+    background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-elevated) 100%);
+    border: 1px solid var(--accent-amber);
+    border-radius: 16px;
+    padding: 2rem;
+    margin-bottom: 2.5rem;
+    position: relative;
+    box-shadow: var(--shadow-glow), var(--shadow-card);
+  }
+
+  .priority::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, transparent 30%, var(--accent-amber-glow) 70%, transparent);
+    z-index: -1;
+    opacity: 0.5;
+  }
+
+  .priority h2 {
+    font-family: 'Fraunces', serif;
+    font-size: 1.65rem;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+    letter-spacing: -0.02em;
+  }
+
+  .priority .priority-sub {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .priority ol {
+    list-style: none;
+    counter-reset: priority;
+  }
+
+  .priority li {
+    counter-increment: priority;
+    padding: 1rem 0 1rem 3rem;
+    border-top: 1px solid var(--border-subtle);
+    position: relative;
+  }
+
+  .priority li:first-child { border-top: none; padding-top: 0; }
+  .priority li:last-child { padding-bottom: 0; }
+
+  .priority li::before {
+    content: counter(priority);
+    position: absolute;
+    left: 0;
+    top: 0.95rem;
+    width: 2rem;
+    height: 2rem;
+    background: var(--accent-amber);
+    color: var(--bg-base);
+    border-radius: 50%;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .priority li:first-child::before { top: -0.05rem; }
+
+  .priority li strong {
+    color: var(--text-primary);
+    font-weight: 600;
+  }
+
+  .priority li .detail {
+    display: block;
+    margin-top: 0.35rem;
+    color: var(--text-secondary);
+    font-size: 0.92rem;
+  }
+
+  /* SECTION */
+  .section {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 14px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    transition: border-color 0.2s ease;
+    scroll-margin-top: 1.5rem;
+  }
+
+  .section:hover { border-color: var(--border-strong); }
+
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-subtle);
+    flex-wrap: wrap;
+  }
+
+  .section h2 {
+    font-family: 'Fraunces', serif;
+    font-size: 1.7rem;
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    line-height: 1.15;
+  }
+
+  .section h2 .num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7em;
+    color: var(--accent-amber);
+    margin-right: 0.5rem;
+    font-weight: 500;
+  }
+
+  .section-sub {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .section h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-top: 1.75rem;
+    margin-bottom: 0.6rem;
+    color: var(--accent-amber);
+    letter-spacing: -0.015em;
+  }
+
+  .section h3:first-of-type { margin-top: 0; }
+
+  .section h4 {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-top: 1.25rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .section p { color: var(--text-secondary); margin-bottom: 0.85rem; }
+
+  .section p strong { color: var(--text-primary); font-weight: 600; }
+
+  .section ul, .section ol {
+    color: var(--text-secondary);
+    margin: 0.5rem 0 1rem 1.25rem;
+  }
+
+  .section li { margin-bottom: 0.4rem; }
+
+  .section a {
+    color: var(--accent-cyan);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(103, 232, 249, 0.3);
+    transition: all 0.15s ease;
+  }
+
+  .section a:hover {
+    color: var(--accent-amber);
+    border-bottom-color: var(--accent-amber);
+  }
+
+  /* CALLOUT */
+  .callout {
+    border-left: 3px solid var(--accent-amber);
+    background: rgba(251, 191, 36, 0.04);
+    padding: 1rem 1.25rem;
+    border-radius: 0 8px 8px 0;
+    margin: 1.25rem 0;
+    font-size: 0.93rem;
+  }
+
+  .callout.warn {
+    border-left-color: var(--accent-rose);
+    background: rgba(251, 113, 133, 0.05);
+  }
+
+  .callout.success {
+    border-left-color: var(--accent-emerald);
+    background: rgba(52, 211, 153, 0.04);
+  }
+
+  .callout.info {
+    border-left-color: var(--accent-cyan);
+    background: rgba(103, 232, 249, 0.04);
+  }
+
+  .callout-label {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.4rem;
+    color: var(--accent-amber);
+  }
+
+  .callout.warn .callout-label { color: var(--accent-rose); }
+  .callout.success .callout-label { color: var(--accent-emerald); }
+  .callout.info .callout-label { color: var(--accent-cyan); }
+
+  /* TABLES */
+  .table-wrap {
+    overflow-x: auto;
+    margin: 1.25rem 0;
+    border: 1px solid var(--border-subtle);
+    border-radius: 8px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+  }
+
+  th, td {
+    text-align: left;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  th {
+    background: var(--bg-elevated);
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+  }
+
+  td { color: var(--text-secondary); vertical-align: top; }
+
+  tr:last-child td { border-bottom: none; }
+
+  tr:hover td { background: var(--bg-card-hover); }
+
+  /* PRODUCT/STORE TAG */
+  .tag {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    padding: 0.15rem 0.5rem;
+    background: var(--bg-elevated);
+    border: 1px solid var(--border-subtle);
+    border-radius: 4px;
+    color: var(--text-secondary);
+    margin: 0 0.15rem;
+    white-space: nowrap;
+  }
+
+  .tag.amber { color: var(--accent-amber); border-color: rgba(251, 191, 36, 0.3); background: var(--accent-amber-glow); }
+  .tag.cyan { color: var(--accent-cyan); border-color: rgba(103, 232, 249, 0.3); background: rgba(103, 232, 249, 0.08); }
+  .tag.rose { color: var(--accent-rose); border-color: rgba(251, 113, 133, 0.3); background: rgba(251, 113, 133, 0.08); }
+  .tag.emerald { color: var(--accent-emerald); border-color: rgba(52, 211, 153, 0.3); background: rgba(52, 211, 153, 0.08); }
+
+  code {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85em;
+    padding: 0.12rem 0.35rem;
+    background: var(--bg-elevated);
+    border-radius: 4px;
+    color: var(--accent-amber);
+    border: 1px solid var(--border-subtle);
+  }
+
+  /* PHONE LINK */
+  .phone {
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--accent-cyan) !important;
+    font-weight: 600;
+  }
+
+  /* RESOURCE GRID */
+  .resource-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 0.75rem;
+    margin-top: 1rem;
+  }
+
+  .resource-card {
+    background: var(--bg-elevated);
+    border: 1px solid var(--border-subtle);
+    border-radius: 8px;
+    padding: 1rem;
+    transition: all 0.15s ease;
+    text-decoration: none !important;
+    border-bottom: 1px solid var(--border-subtle) !important;
+    display: block;
+    color: var(--text-primary) !important;
+  }
+
+  .resource-card:hover {
+    background: var(--bg-card-hover);
+    border-color: var(--accent-amber) !important;
+    transform: translateY(-1px);
+  }
+
+  .resource-card .rc-label {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.3rem;
+    font-weight: 600;
+  }
+
+  .resource-card .rc-name {
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.25rem;
+    font-size: 0.95rem;
+  }
+
+  .resource-card .rc-meta {
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  /* DIVIDER */
+  hr {
+    border: none;
+    border-top: 1px solid var(--border-subtle);
+    margin: 1.5rem 0;
+  }
+
+  /* FOOTER */
+  footer {
+    text-align: center;
+    padding: 3rem 1.5rem 4rem;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    border-top: 1px solid var(--border-subtle);
+    position: relative;
+    z-index: 2;
+  }
+
+  footer .cat-paw {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    opacity: 0.5;
+  }
+
+  footer a { color: var(--accent-amber); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+
+  /* SR-only utility */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  /* SELECTION */
+  ::selection {
+    background: var(--accent-amber);
+    color: var(--bg-base);
+  }
+
+  ::-moz-selection {
+    background: var(--accent-amber);
+    color: var(--bg-base);
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="eyebrow">Pahoa, HI · No-vet Care Plan</div>
+  <h1>Mr. Puff</h1>
+  <p class="lede">Ear-tipped community cat that's started sleeping on the bed. A DIY-medical playbook for the days a vet visit isn't realistic.</p>
+  <div class="hero-meta">
+    <span>For both Mr. Puff &amp; the resident Maine Coon</span>
+    <span>·</span>
+    <span>Updated April 2026</span>
+  </div>
+</header>
+
+<div class="layout">
+
+  <!-- TOC -->
+  <nav class="toc" aria-label="Contents">
+    <h4>Contents</h4>
+    <ul>
+      <li><a href="#priority">Top 5 Priorities</a></li>
+      <li><a href="#reality">The New Reality</a></li>
+      <li><a href="#diy-vs-vet">DIY vs Vet</a></li>
+      <li><a href="#mr-puff">Mr. Puff Care</a></li>
+      <li><a href="#maine-coon">Your Maine Coon</a></li>
+      <li><a href="#bedroom">Bedroom Decon</a></li>
+      <li><a href="#environment">Yard &amp; Home</a></li>
+      <li><a href="#human">For You</a></li>
+      <li><a href="#escalate">When to Escalate</a></li>
+      <li><a href="#shopping">Shopping List</a></li>
+      <li><a href="#vets">Vet Contacts</a></li>
+      <li><a href="#sources">Sources</a></li>
+    </ul>
+  </nav>
+
+  <main class="content">
+
+    <!-- PRIORITY -->
+    <section class="priority" id="priority">
+      <h2>Top 5 Priorities</h2>
+      <p class="priority-sub">If you do nothing else, do these. In order.</p>
+      <ol>
+        <li>
+          <strong>Vaccinate the Maine Coon for FeLV</strong>
+          <span class="detail">Highest-stakes intervention now that exposure has happened. OTC vaccine from <a href="https://www.revivalanimal.com" target="_blank" rel="noopener">Revival Animal Health</a>, two-shot prime + booster, ~$30 total. DIY subq.</span>
+        </li>
+        <li>
+          <strong>Decontaminate the bed and bedroom</strong>
+          <span class="detail">Hot wash all bedding, vacuum mattress aggressively, light <a href="https://www.adamspetcare.com/products/home/flea-and-tick-home-spray" target="_blank" rel="noopener">Adams home spray</a> on bare mattress, $30 mattress encasement. The bed is now a flea-egg reservoir.</span>
+        </li>
+        <li>
+          <strong>Capstar / CapAction in wet food every visit</strong>
+          <span class="detail">OTC oral pill, kills 100% of fleas in 30 min, lasts 24 hrs. Stops re-seeding immediately. ~$15 generic 6-pack on Amazon.</span>
+        </li>
+        <li>
+          <strong>Black Flag Yard Concentrate at <a href="https://www.homedepot.com/p/Black-Flag-Flea-and-Tick-Yard-Spray-32-oz-Ready-to-Spray-Concentrate-HG-11108-2/301694302" target="_blank" rel="noopener">Home Depot Hilo</a></strong>
+          <span class="detail">Pyriproxyfen IGR + lambda-cyhalothrin, 32 oz hose-end, 5,000 sqft. Highest-impact environmental product. Re-treat every 4 months.</span>
+        </li>
+        <li>
+          <strong>OTC FVRCP vaccine for Mr. Puff when she's calm</strong>
+          <span class="detail">Same source as the FeLV vaccine. Single highest-yield thing for her health. Prime + booster in 3-4 weeks + annual.</span>
+        </li>
+      </ol>
+    </section>
+
+    <!-- REALITY -->
+    <section class="section" id="reality">
+      <div class="section-header">
+        <h2><span class="num">01</span>The New Reality</h2>
+        <span class="section-sub">paradigm-shift.md</span>
+      </div>
+      <p>She's been inside for full days twice now and slept on the bed. The original "keep her separated until vet results" line is already broken. Pivot to <strong>harm reduction at the surface level</strong>, not prevention.</p>
+      <ul>
+        <li>She's a part-time house cat, not a stray you're considering helping. Two overnight visits with no panic from her means she's probably going to keep doing it, and the visits will get longer.</li>
+        <li>Your Maine Coon has been exposed. Anything Mr. Puff carries that's transmitted via shared surfaces (FeLV, URI viruses, ringworm, fleas) has had a chance to transfer.</li>
+        <li>The <strong>ear tip</strong> tells you she was spayed and microchipped during a TNR cycle. It does NOT tell you her FIV/FeLV status. Budget TNR programs in Hawaii usually skip the snap test because positive cats are still released under standard TNR ethics.</li>
+      </ul>
+      <div class="callout warn">
+        <span class="callout-label">Assume status unknown</span>
+        Treat Mr. Puff as if she could be FIV-positive AND FeLV-positive for planning purposes. Vaccinate the Maine Coon, minimize shared bowls, watch for symptoms.
+      </div>
+    </section>
+
+    <!-- DIY VS VET -->
+    <section class="section" id="diy-vs-vet">
+      <div class="section-header">
+        <h2><span class="num">02</span>DIY vs Vet</h2>
+        <span class="section-sub">what-you-can-substitute.md</span>
+      </div>
+
+      <h3>What you CAN do at home</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Vet service</th><th>OTC alternative</th><th>Honesty rating</th></tr></thead>
+          <tbody>
+            <tr><td>FVRCP vaccine</td><td>OTC vaccine + DIY subq injection</td><td>Solid &mdash; widely done by rescues, breeders, farms</td></tr>
+            <tr><td>FeLV vaccine</td><td>OTC vaccine + DIY subq injection</td><td>Solid for routine; positive cats need full vet workup</td></tr>
+            <tr><td>Flea/tick control</td><td>Capstar oral + Advantage II topical</td><td>Equivalent to most vet products</td></tr>
+            <tr><td>Tapeworm dewormer</td><td>Elanco praziquantel OTC</td><td>Identical drug to vet version</td></tr>
+            <tr><td>Roundworm/hookworm</td><td>Pyrantel pamoate (Nemex-2) OTC</td><td>Identical drug</td></tr>
+            <tr><td>Wound flushing</td><td>Saline + dilute chlorhexidine</td><td>Same protocol</td></tr>
+            <tr><td>Ringworm screening</td><td>Wood's lamp ($15) + DTM culture ($15)</td><td>~50-80% sensitive; positive = treat empirically</td></tr>
+            <tr><td>Empirical antibiotics</td><td>Fish/aquarium amoxicillin, doxycycline</td><td>Pharmaceutically identical, dosing risk; emergency use only</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>What you CAN'T do at home</h3>
+      <ul>
+        <li><strong>FIV/FeLV blood test.</strong> Requires venipuncture skill. The load-bearing unknown.</li>
+        <li><strong>Bloodwork</strong> (CBC, chemistry panel, T4 thyroid). No DIY path.</li>
+        <li><strong>Dental cleaning, extractions, dental X-rays.</strong> Requires general anesthesia.</li>
+        <li><strong>Surgery.</strong> Spay is already done (ear tip), but anything else needs a clinic.</li>
+        <li><strong>X-rays, ultrasound.</strong> Imaging requires equipment.</li>
+      </ul>
+
+      <div class="callout info">
+        <span class="callout-label">Boundary</span>
+        You can do all routine preventive care + minor wound care + symptom-based triage at home. You cannot diagnose or treat internal disease without imaging or labs.
+      </div>
+    </section>
+
+    <!-- MR PUFF -->
+    <section class="section" id="mr-puff">
+      <div class="section-header">
+        <h2><span class="num">03</span>Mr. Puff Care</h2>
+        <span class="section-sub">opportunistic-otc.md</span>
+      </div>
+
+      <h3>Every visit (food-disguised)</h3>
+      <p>All hidden in a tablespoon of <span class="tag">Fancy Feast pate</span>. The smell covers any pill.</p>
+      <ul>
+        <li><strong>Capstar / CapAction (nitenpyram) 11.4 mg.</strong> Kills 100% of fleas in 30 min, lasts 24 hrs. ~$15 generic 6-pack. <a href="https://www.amazon.com/s?k=capaction+for+cats" target="_blank" rel="noopener">Amazon</a> · <a href="https://www.petco.com/shop/en/petcostore/category/cat/cat-flea-and-tick" target="_blank" rel="noopener">Petco Hilo</a></li>
+      </ul>
+
+      <h3>Every 3 months</h3>
+      <ul>
+        <li><strong>Elanco Tapeworm Dewormer</strong> (praziquantel) 23 mg, one dose. <a href="https://www.amazon.com/Bayer-Tapeworm-Dewormer-weeks-older/dp/B019CD4ZDS" target="_blank" rel="noopener">Amazon</a></li>
+        <li><strong>Pyrantel pamoate liquid (Nemex-2)</strong> for roundworms/hookworms. 1 mL per 10 lbs. Repeat in 2 weeks (catches the next lifecycle), then every 3 months.</li>
+      </ul>
+
+      <h3>If she lets you touch her</h3>
+      <ul>
+        <li><strong>Advantage II Large Cat</strong> topical between shoulder blades, monthly. Imidacloprid + pyriproxyfen. ~$60 for 6-pack at <a href="https://stores.petco.com/hi/hilo/pet-supplies-hilo-hi-2162.html" target="_blank" rel="noopener">Petco Hilo</a>.</li>
+      </ul>
+
+      <h3>Vaccines you administer (cold-chain shipped)</h3>
+      <p>Subcutaneous, between shoulder blades, 1 mL with a 22g needle. The skill: lift skin tent, slide needle in at the base, inject, withdraw. <a href="https://www.youtube.com/results?search_query=how+to+give+a+cat+a+subcutaneous+injection" target="_blank" rel="noopener">YouTube has good demos</a> from Revival and Jeffers.</p>
+      <div class="resource-grid">
+        <a href="https://www.jefferspet.com/products/spectra-feline-3" target="_blank" rel="noopener" class="resource-card">
+          <div class="rc-label">FVRCP · Core Vaccine</div>
+          <div class="rc-name">Spectra Feline 3</div>
+          <div class="rc-meta">$5-10/dose · Jeffers</div>
+        </a>
+        <a href="https://www.revivalanimal.com/product/nobivac-feline-1-hcpch-vaccine-25-x-1ml-cm" target="_blank" rel="noopener" class="resource-card">
+          <div class="rc-label">FVRCP · Alt Brand</div>
+          <div class="rc-name">Nobivac Feline 1</div>
+          <div class="rc-meta">$5-10/dose · Revival</div>
+        </a>
+        <a href="https://www.revivalanimal.com/category/feline-leukemia-vaccines" target="_blank" rel="noopener" class="resource-card">
+          <div class="rc-label">FeLV Vaccine</div>
+          <div class="rc-name">Nobivac Feline 2-FeLV</div>
+          <div class="rc-meta">$10-15/dose · Revival</div>
+        </a>
+        <a href="https://www.tractorsupply.com/tsc/catalog/cat-vaccinations" target="_blank" rel="noopener" class="resource-card">
+          <div class="rc-label">In-store option</div>
+          <div class="rc-name">Tractor Supply</div>
+          <div class="rc-meta">FVRCP available</div>
+        </a>
+      </div>
+      <div class="callout success">
+        <span class="callout-label">Schedule</span>
+        Prime dose &rarr; booster in 3-4 weeks &rarr; annual after that (some protocols stretch to every 3 years). FVRCP is the highest-yield single vaccine.
+      </div>
+      <div class="callout warn">
+        <span class="callout-label">Skip rabies</span>
+        Hawaii is rabies-free, one of a handful of US states. Rabies vaccine must legally be given by a vet anyway. Practical risk is essentially zero.
+      </div>
+
+      <h3>Visual screening (no diagnostics, just observation)</h3>
+      <ul>
+        <li><strong>Eyes:</strong> clear vs cloudy. Cloudiness = LFA bite (most likely on Big Island), URI, or aging cataract. Squinting = pain or LFA.</li>
+        <li><strong>Mouth:</strong> lift the lip if she'll let you. Healthy gums are pink. Rot smell = dental disease.</li>
+        <li><strong>Coat:</strong> part fur on the rump. Flea dirt looks like pepper, smears red on a wet tissue. Round patches with raised borders = ringworm.</li>
+        <li><strong>Weight:</strong> lift her weekly, get a sense for whether she's getting lighter. Weight loss is always a flag.</li>
+        <li><strong>Ears:</strong> dark crumbly debris = mites. Clean with mineral oil on a cotton ball.</li>
+        <li><strong>Wood's lamp</strong> ($15 on Amazon) for ringworm screening. M. canis glows green under UV in ~50% of cases.</li>
+      </ul>
+    </section>
+
+    <!-- MAINE COON -->
+    <section class="section" id="maine-coon">
+      <div class="section-header">
+        <h2><span class="num">04</span>Your Maine Coon</h2>
+        <span class="section-sub">high-priority-now.md</span>
+      </div>
+      <p>Mr. Puff's exposure to your cat is already done. You can't prevent it retroactively. What you can do is harden your Maine Coon's defenses now.</p>
+
+      <h3>Verify and DIY-boost vaccines</h3>
+      <ul>
+        <li><strong>Last FVRCP?</strong> If &gt;1 year ago for cat under 7, or &gt;3 years for any age, boost now. OTC FVRCP fine.</li>
+        <li><strong>Has she ever had FeLV vaccine?</strong> If no, start the series now. Two-shot prime + booster + annual. Mr. Puff has been on the bed; FeLV transmits via shared surfaces, mutual grooming, and food bowls.</li>
+      </ul>
+
+      <h3>Flea control on the Maine Coon</h3>
+      <ul>
+        <li>Capstar dose now (immediate knockdown of any fleas she picked up).</li>
+        <li>Then monthly Advantage II topical, or call a mobile vet for one Rx visit.</li>
+        <li>She likely has fleas now even if you can't see them. Treat empirically.</li>
+      </ul>
+
+      <h3>60-90 day symptom watch</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Symptom</th><th>Likely cause</th><th>Action</th></tr></thead>
+          <tbody>
+            <tr><td>Sneezing, eye discharge</td><td>URI from Mr. Puff</td><td>Self-limiting in vaccinated cats; escalate if she stops eating</td></tr>
+            <tr><td>Lethargy + weight loss + pale gums</td><td>FeLV anemia</td><td><span class="tag rose">URGENT</span> mobile vet</td></tr>
+            <tr><td>New lumps</td><td>FeLV-associated lymphoma (rare but serious)</td><td><span class="tag rose">URGENT</span> mobile vet</td></tr>
+            <tr><td>Diarrhea or vomiting</td><td>Probably parasites</td><td>Deworm with pyrantel, watch</td></tr>
+            <tr><td>Skin patches, scaly hair loss</td><td>Ringworm</td><td>Miconazole athlete's-foot cream; if widespread, vet</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Reduce ongoing shared surfaces</h3>
+      <ul>
+        <li>Block the bedroom door when Mr. Puff is inside. Bed is the highest-stakes shared surface.</li>
+        <li>Two food stations: Maine Coon's food on a high counter, or behind a baby gate she can jump.</li>
+        <li>Two water bowls if you can manage it.</li>
+        <li>Two litter boxes in different rooms if Mr. Puff starts using one inside.</li>
+      </ul>
+      <p>You can't fully separate them now without locking your Maine Coon in a room. Aim for "minimum shared surfaces" instead of "zero."</p>
+    </section>
+
+    <!-- BEDROOM -->
+    <section class="section" id="bedroom">
+      <div class="section-header">
+        <h2><span class="num">05</span>Bedroom Decon</h2>
+        <span class="section-sub">flea-egg-reservoir.md</span>
+      </div>
+      <p>This is now flea-egg territory. Eggs hatch in 2-14 days in Hawaii's climate.</p>
+      <ol>
+        <li><strong>Strip the bed.</strong> Hot wash everything: sheets, pillowcases, comforter, mattress pad. If anything is dry-clean only, take it now.</li>
+        <li><strong>Vacuum the mattress.</strong> Both sides if possible. Edges and seams especially. Dump canister outside immediately into a sealed bag.</li>
+        <li><strong>Light spray of Adams home spray</strong> on the bare mattress. Let dry fully (1-2 hours, ventilated). Then put a fresh sheet on.</li>
+        <li><strong>Mattress encasement</strong> (Allerzip or similar, ~$30) is worth it. Zips around the whole mattress, traps any surviving eggs.</li>
+        <li><strong>Vacuum the bedroom floor daily for 2 weeks</strong>, dump canister outside each time. Flea pupae hatch in response to vibration; vacuuming triggers them, then sucks them up.</li>
+        <li><strong>Wash blankets and throw pillows weekly going forward</strong>, hot water, regardless of whether she's been in.</li>
+      </ol>
+    </section>
+
+    <!-- ENVIRONMENT -->
+    <section class="section" id="environment">
+      <div class="section-header">
+        <h2><span class="num">06</span>Yard &amp; Home</h2>
+        <span class="section-sub">environment-first.md</span>
+      </div>
+
+      <h3>The yard (the source)</h3>
+      <ul>
+        <li><a href="https://www.homedepot.com/p/Black-Flag-Flea-and-Tick-Yard-Spray-32-oz-Ready-to-Spray-Concentrate-HG-11108-2/301694302" target="_blank" rel="noopener"><strong>Black Flag Yard Concentrate</strong></a> 32 oz hose-end at Home Depot Hilo. Pyriproxyfen IGR + lambda-cyhalothrin. Treats 5,000 sqft. Spray any area she dens, naps, or hangs out in. <strong>Highest-impact single purchase.</strong></li>
+        <li>Re-treat every 4 months in Hawaii (the label says longer; humidity shortens IGR life).</li>
+        <li><strong>Diatomaceous earth</strong> (food-grade) along the foundation perimeter as a non-toxic mechanical barrier.</li>
+      </ul>
+
+      <h3>Lanai / porch / sheltered outdoor</h3>
+      <ul>
+        <li><a href="https://www.walmart.com/ip/Adams-Flea-and-Tick-Home-Spray-24-ounces-Fragrance-Free/44432722" target="_blank" rel="noopener"><strong>Adams Flea &amp; Tick Home Spray</strong></a> (24 oz trigger, fragrance-free) at Walmart Hilo. (s)-methoprene + pyrethrins.</li>
+        <li>Spray cushions, mats, anywhere she sits. Re-treat at 4 months.</li>
+      </ul>
+
+      <h3>Indoor surfaces</h3>
+      <ul>
+        <li>Vacuum aggressively (every 2-3 days during active treatment). Dump canister outside immediately.</li>
+        <li>Wash any soft thing she touches in <strong>hot</strong> water weekly.</li>
+        <li>Spray Adams on carpets and furniture. Air for an hour, vacuum, done.</li>
+        <li><strong>Flea trap</strong> (light + sticky pad, $10 on Amazon) as a monitoring tool. If you're catching fleas a week after spraying, treatment isn't holding.</li>
+      </ul>
+
+      <div class="callout warn">
+        <span class="callout-label">Permethrin warning</span>
+        Permethrin is in many dog flea products and household sprays. <strong>Lethal to cats</strong>, even small exposures. If you treat with anything containing permethrin, both cats need to be out for ~24 hrs and surfaces fully dry. The Adams + Black Flag products listed here use IGRs + pyrethrins (different from permethrin) and are cat-safe once dry.
+      </div>
+    </section>
+
+    <!-- HUMAN -->
+    <section class="section" id="human">
+      <div class="section-header">
+        <h2><span class="num">07</span>For You</h2>
+        <span class="section-sub">human-health.md</span>
+      </div>
+
+      <h3>Bite and scratch protocol</h3>
+      <ul>
+        <li><strong>Wash with soap and water immediately</strong> for at least 60 seconds.</li>
+        <li><strong>Iodine or chlorhexidine, not alcohol.</strong> Alcohol burns; iodine actually kills bacteria.</li>
+        <li><strong>Pasteurella multocida</strong> is the bacterium in most cat mouths. Cat bites infect fast (12-24 hrs). Symptoms: spreading redness, warmth, throbbing. <span class="tag rose">Urgent care for amoxicillin/clavulanate.</span></li>
+        <li>Deep bite near a joint or tendon = ER, same day.</li>
+      </ul>
+
+      <h3>Bartonella henselae (cat scratch fever)</h3>
+      <ul>
+        <li>Vectored by fleas. Aggressive flea control is the prevention.</li>
+        <li>Symptoms in humans: low fever, swollen lymph node near the scratch, malaise. Usually self-limiting but can persist.</li>
+        <li>Swollen lymph nodes a few weeks after a scratch &rarr; doctor, ask about doxycycline.</li>
+      </ul>
+
+      <h3>Ringworm</h3>
+      <ul>
+        <li>Round, scaly, itchy patch with a raised border (often shaped like a ring) = likely ringworm from her.</li>
+        <li>OTC clotrimazole or miconazole cream (athlete's foot section) twice daily for 2-4 weeks.</li>
+        <li>If it spreads or doesn't respond &rarr; doctor for oral antifungals.</li>
+      </ul>
+
+      <h3>Flea-bite relief</h3>
+      <ul>
+        <li><strong>1% hydrocortisone cream</strong> from <a href="https://www.cvs.com/store-locator/pahoa-hi-pharmacies/15-1454-kahakai-blvd-pahoa-hi-96778/storeid=7098" target="_blank" rel="noopener">Longs Pahoa</a></li>
+        <li><strong>Zyrtec (cetirizine)</strong> non-drowsy in the day</li>
+        <li><strong>Benadryl (diphenhydramine)</strong> at night if you want the drowsy effect to actually sleep</li>
+      </ul>
+
+      <h3>General hygiene</h3>
+      <ul>
+        <li>Wash hands after handling her, before handling food or your face.</li>
+        <li>Don't let her lick your mouth or open wounds. Bartonella also transmits oral-mucosal.</li>
+        <li>If pregnant or immunocompromised, the toxoplasmosis risk from her feces is real &mdash; use gloves for any cleanup, or have someone else handle it.</li>
+      </ul>
+    </section>
+
+    <!-- ESCALATE -->
+    <section class="section" id="escalate">
+      <div class="section-header">
+        <h2><span class="num">08</span>When to Escalate to a Vet</h2>
+        <span class="section-sub">no-vet-but-emergency.md</span>
+      </div>
+
+      <h3>Mr. Puff symptoms</h3>
+      <ul>
+        <li>Off food for &gt;24 hrs (universal "something is wrong" signal in cats)</li>
+        <li>Lethargy, hiding for more than a day</li>
+        <li>Visible deep wound, especially with swelling or smell</li>
+        <li>Cloudy eyes, squinting, pawing at face</li>
+        <li>Foaming at mouth, drooling heavily (cane toad ingestion)</li>
+        <li>Difficulty breathing, open-mouth breathing</li>
+        <li>Stops walking normally</li>
+      </ul>
+
+      <h3>Maine Coon symptoms</h3>
+      <ul>
+        <li>Same list as above &mdash; escalate faster (you have better baseline)</li>
+        <li>Plus: any new lump, persistent sneezing, weight loss</li>
+      </ul>
+
+      <h3>Mobile vets (call same-day if she's confined)</h3>
+      <div class="resource-grid">
+        <a href="https://www.bigislandmobilevet.com/" target="_blank" rel="noopener" class="resource-card">
+          <div class="rc-label">Primary Mobile Vet</div>
+          <div class="rc-name">Big Island Mobile Veterinary Care</div>
+          <div class="rc-meta">(808) 731-4027 · Hilo</div>
+        </a>
+        <div class="resource-card">
+          <div class="rc-label">Backup Mobile</div>
+          <div class="rc-name">All Pets Mobile Vet Clinic</div>
+          <div class="rc-meta">(808) 935-3400</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SHOPPING -->
+    <section class="section" id="shopping">
+      <div class="section-header">
+        <h2><span class="num">09</span>Shopping List (revised)</h2>
+        <span class="section-sub">~$250 total to set up</span>
+      </div>
+
+      <h3>Pahoa today</h3>
+      <ul>
+        <li><a href="https://www.cvs.com/store-locator/pahoa-hi-pharmacies/15-1454-kahakai-blvd-pahoa-hi-96778/storeid=7098" target="_blank" rel="noopener">Longs Pahoa</a>: 1% hydrocortisone, Zyrtec, iodine swabs (CVS-brand fine).</li>
+        <li><a href="https://www.acehardware.com/store-details/15294" target="_blank" rel="noopener">Ace Pahoa</a>: vacuum bags or large trash bags.</li>
+      </ul>
+
+      <h3>Online today (3-5 day shipping)</h3>
+      <div class="resource-grid">
+        <a href="https://www.revivalanimal.com" target="_blank" rel="noopener" class="resource-card">
+          <div class="rc-label">Vaccines</div>
+          <div class="rc-name">Revival Animal Health</div>
+          <div class="rc-meta">FVRCP 4-pack, FeLV 2-pack, syringes, cold-shipper</div>
+        </a>
+        <a href="https://www.jefferspet.com" target="_blank" rel="noopener" class="resource-card">
+          <div class="rc-label">Vaccines · Alt</div>
+          <div class="rc-name">Jeffers Pet</div>
+          <div class="rc-meta">Same vaccines, similar prices</div>
+        </a>
+        <a href="https://www.amazon.com/s?k=capaction+for+cats" target="_blank" rel="noopener" class="resource-card">
+          <div class="rc-label">Daily flea kill</div>
+          <div class="rc-name">CapAction 6-pack</div>
+          <div class="rc-meta">Amazon · ~$15</div>
+        </a>
+        <a href="https://www.amazon.com/s?k=woods+lamp+ringworm" target="_blank" rel="noopener" class="resource-card">
+          <div class="rc-label">Screening</div>
+          <div class="rc-name">Wood's lamp</div>
+          <div class="rc-meta">Amazon · ~$15</div>
+        </a>
+        <a href="https://www.amazon.com/s?k=mattress+encasement+allerzip" target="_blank" rel="noopener" class="resource-card">
+          <div class="rc-label">Bedroom decon</div>
+          <div class="rc-name">Mattress encasement</div>
+          <div class="rc-meta">Amazon · ~$30</div>
+        </a>
+        <a href="https://www.amazon.com/s?k=food+grade+diatomaceous+earth" target="_blank" rel="noopener" class="resource-card">
+          <div class="rc-label">Yard barrier</div>
+          <div class="rc-name">Diatomaceous earth</div>
+          <div class="rc-meta">Amazon · food-grade</div>
+        </a>
+      </div>
+
+      <h3>Hilo run this week</h3>
+      <div class="resource-grid">
+        <a href="https://www.walmart.com/ip/Adams-Flea-and-Tick-Home-Spray-24-ounces-Fragrance-Free/44432722" target="_blank" rel="noopener" class="resource-card">
+          <div class="rc-label">Walmart Hilo</div>
+          <div class="rc-name">Adams Home Spray 24oz</div>
+          <div class="rc-meta">Buy multiple cans</div>
+        </a>
+        <a href="https://www.homedepot.com/p/Black-Flag-Flea-and-Tick-Yard-Spray-32-oz-Ready-to-Spray-Concentrate-HG-11108-2/301694302" target="_blank" rel="noopener" class="resource-card">
+          <div class="rc-label">Home Depot Hilo</div>
+          <div class="rc-name">Black Flag Yard Concentrate</div>
+          <div class="rc-meta">32 oz hose-end · 5,000 sqft</div>
+        </a>
+        <a href="https://stores.petco.com/hi/hilo/pet-supplies-hilo-hi-2162.html" target="_blank" rel="noopener" class="resource-card">
+          <div class="rc-label">Petco Prince Kuhio</div>
+          <div class="rc-name">Advantage II Large Cat</div>
+          <div class="rc-meta">3 or 6-pack · ~$60</div>
+        </a>
+      </div>
+
+      <div class="callout info">
+        <span class="callout-label">Skip</span>
+        Carrier (no point right now), stainless bowls (you're not "adopting" her), pet-safe paw wipes (she's not coming inside in a controlled way). Skip ALL Hartz brand spot-ons (long history of cat injuries).
+      </div>
+    </section>
+
+    <!-- VETS -->
+    <section class="section" id="vets">
+      <div class="section-header">
+        <h2><span class="num">10</span>Vet Contacts (for the day she's catchable)</h2>
+        <span class="section-sub">phone-list.md</span>
+      </div>
+      <div class="resource-grid">
+        <a href="https://bigislandpetcarecenter.org/" target="_blank" rel="noopener" class="resource-card">
+          <div class="rc-label">PRIMARY</div>
+          <div class="rc-name">Big Island Pet Care Center</div>
+          <div class="rc-meta">(808) 966-5402 · Keaau</div>
+        </a>
+        <a href="https://www.bigislandmobilevet.com/" target="_blank" rel="noopener" class="resource-card">
+          <div class="rc-label">Mobile (premium)</div>
+          <div class="rc-name">Big Island Mobile Vet</div>
+          <div class="rc-meta">(808) 731-4027 · Hilo</div>
+        </a>
+        <div class="resource-card">
+          <div class="rc-label">Backup</div>
+          <div class="rc-name">Kilauea Veterinary Services</div>
+          <div class="rc-meta">(808) 966-8582 · Keaau</div>
+        </div>
+        <a href="https://pethospitalhilo.com/services/" target="_blank" rel="noopener" class="resource-card">
+          <div class="rc-label">Backup</div>
+          <div class="rc-name">The Pet Hospital Hilo</div>
+          <div class="rc-meta">(808) 961-0638</div>
+        </a>
+        <a href="https://hihs.org/services/community-veterinary-care/" target="_blank" rel="noopener" class="resource-card">
+          <div class="rc-label">Low cost</div>
+          <div class="rc-name">HIHS Community Vet Care</div>
+          <div class="rc-meta">Keaau · by appt</div>
+        </a>
+        <a href="https://petfixbigisland.org/" target="_blank" rel="noopener" class="resource-card">
+          <div class="rc-label">Free clinic</div>
+          <div class="rc-name">PETFIX Big Island</div>
+          <div class="rc-meta">Mobile clinics in Keaau</div>
+        </a>
+      </div>
+      <div class="callout warn">
+        <span class="callout-label">Pahoa Animal Hospital is closed to new clients</span>
+        Waitlist only as of early 2026. Do not call them first. Big Island Pet Care Center in Keaau (15 min north) is the working primary.
+      </div>
+    </section>
+
+    <!-- SOURCES -->
+    <section class="section" id="sources">
+      <div class="section-header">
+        <h2><span class="num">11</span>Sources &amp; Further Reading</h2>
+        <span class="section-sub">references.md</span>
+      </div>
+      <ul>
+        <li><a href="https://avmajournals.avma.org/view/journals/javma/253/4/javma.253.4.405.xml" target="_blank" rel="noopener">AVMA on isoxazoline neurological warnings (2018)</a></li>
+        <li><a href="https://catvets.com/guidelines/practice-guidelines/feline-vaccination-guidelines" target="_blank" rel="noopener">AAFP Feline Vaccination Guidelines</a></li>
+        <li><a href="https://www.cdc.gov/healthypets/diseases/cat-scratch.html" target="_blank" rel="noopener">CDC on Bartonella henselae</a></li>
+        <li><a href="https://www.cdc.gov/parasites/toxoplasmosis/" target="_blank" rel="noopener">CDC on Toxoplasmosis</a></li>
+        <li><a href="https://www.merckvetmanual.com/cat-owners/disorders-affecting-multiple-body-systems-of-cats/feline-leukemia-virus-disease-complex" target="_blank" rel="noopener">Merck Vet Manual on FeLV</a></li>
+        <li><a href="https://www.fda.gov/animal-veterinary/safety-health/animal-drug-safety-communication-fda-alerts-pet-owners-and-veterinarians-about-potential-neurologic" target="_blank" rel="noopener">FDA isoxazoline alert</a></li>
+        <li><a href="https://www.hawaiiantlab.com/" target="_blank" rel="noopener">Hawaii Ant Lab (LFA resources)</a></li>
+      </ul>
+    </section>
+
+  </main>
+</div>
+
+<footer>
+  <div class="cat-paw">∴</div>
+  <p>For Mr. Puff &mdash; an ear-tipped community cat in Pahoa &middot; Apr 2026</p>
+  <p style="margin-top: 0.5rem; font-size: 0.78rem;">Source markdown lives in <a href="https://github.com/batelzeek36/mr-puff-cat" target="_blank" rel="noopener">the repo</a>. This is a reference document, not medical advice.</p>
+</footer>
+
+</body>
+</html>
