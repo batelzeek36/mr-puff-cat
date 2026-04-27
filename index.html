@@ -211,6 +211,167 @@
   /* CONTENT */
   .content { min-width: 0; }
 
+  /* ESSENTIALS PACKAGE - the top headline shopping list */
+  .essentials {
+    background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-elevated) 100%);
+    border: 1px solid var(--accent-cyan);
+    border-radius: 16px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    position: relative;
+    box-shadow: 0 0 60px rgba(103, 232, 249, 0.08), var(--shadow-card);
+  }
+
+  .essentials::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, transparent 30%, rgba(103, 232, 249, 0.15) 70%, transparent);
+    z-index: -1;
+    opacity: 0.5;
+  }
+
+  .essentials-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .essentials h2 {
+    font-family: 'Fraunces', serif;
+    font-size: 1.65rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  .essentials .total-pill {
+    background: var(--accent-cyan);
+    color: var(--bg-base);
+    padding: 0.4rem 1rem;
+    border-radius: 999px;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    font-size: 0.95rem;
+  }
+
+  .essentials .ess-sub {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .ess-group {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-subtle);
+  }
+
+  .ess-group h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--accent-cyan);
+    letter-spacing: -0.015em;
+    margin-bottom: 0.85rem;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .ess-group h3 .group-subtotal {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-weight: 500;
+  }
+
+  .ess-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+  }
+
+  .ess-table td {
+    padding: 0.55rem 0.5rem;
+    border-bottom: 1px solid var(--border-subtle);
+    vertical-align: top;
+    color: var(--text-secondary);
+  }
+
+  .ess-table tr:last-child td { border-bottom: none; }
+
+  .ess-table .ess-name {
+    font-weight: 600;
+    color: var(--text-primary);
+    width: 40%;
+  }
+
+  .ess-table .ess-name a {
+    color: var(--text-primary);
+    text-decoration: none;
+    border-bottom: 1px dashed var(--accent-cyan);
+  }
+
+  .ess-table .ess-name a:hover { color: var(--accent-cyan); }
+
+  .ess-table .ess-desc { width: 45%; font-size: 0.85rem; }
+
+  .ess-table .ess-price {
+    width: 15%;
+    text-align: right;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 600;
+    color: var(--accent-amber);
+    white-space: nowrap;
+  }
+
+  .ess-table .ess-price.optional {
+    color: var(--text-muted);
+    font-style: italic;
+  }
+
+  .ess-tiers {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-subtle);
+  }
+
+  .ess-tiers h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--accent-amber);
+    margin-bottom: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .tier-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    gap: 1rem;
+    border-bottom: 1px dotted var(--border-subtle);
+  }
+
+  .tier-row:last-child { border-bottom: none; }
+
+  .tier-row .tier-name { font-weight: 600; color: var(--text-primary); font-size: 0.9rem; }
+  .tier-row .tier-desc { color: var(--text-muted); font-size: 0.8rem; flex: 1; padding-left: 1rem; }
+  .tier-row .tier-cost {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    color: var(--accent-cyan);
+    font-size: 0.95rem;
+    white-space: nowrap;
+  }
+
   /* PRIORITY CARD - the headline */
   .priority {
     background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-elevated) 100%);
@@ -615,6 +776,7 @@
   <nav class="toc" aria-label="Contents">
     <h4>Contents</h4>
     <ul>
+      <li><a href="#essentials">Essentials Package</a></li>
       <li><a href="#priority">Top 5 Priorities</a></li>
       <li><a href="#reality">The New Reality</a></li>
       <li><a href="#diy-vs-vet">DIY vs Vet</a></li>
@@ -632,6 +794,148 @@
   </nav>
 
   <main class="content">
+
+    <!-- ESSENTIALS PACKAGE -->
+    <section class="essentials" id="essentials">
+      <div class="essentials-header">
+        <h2>Essentials Package</h2>
+        <span class="total-pill">~$200 all-in</span>
+      </div>
+      <p class="ess-sub">Everything to buy in one shopping run. Verified Amazon and Jeffers prices, April 2026. Optional add-ons listed separately at the bottom.</p>
+
+      <div class="ess-group">
+        <h3>For Mr. Puff (the cat) <span class="group-subtotal">subtotal ~$129</span></h3>
+        <table class="ess-table">
+          <tr>
+            <td class="ess-name"><a href="https://www.amazon.com/s?k=capaction+nitenpyram+cats+small" target="_blank" rel="noopener">CapAction (PetArmor) 6-pack</a></td>
+            <td class="ess-desc">Oral flea kill, hide in food. Use every visit until load drops.</td>
+            <td class="ess-price">$31</td>
+          </tr>
+          <tr>
+            <td class="ess-name"><a href="https://www.amazon.com/Bayer-Tapeworm-Dewormer-weeks-older/dp/B019CD4ZDS" target="_blank" rel="noopener">Elanco Tapeworm Dewormer 3-count</a></td>
+            <td class="ess-desc">Praziquantel for tapeworms (guaranteed with heavy flea load).</td>
+            <td class="ess-price">$20</td>
+          </tr>
+          <tr>
+            <td class="ess-name"><a href="https://www.amazon.com/s?k=Nemex-2+pyrantel+cat+dewormer" target="_blank" rel="noopener">Nemex-2 Wormer 2 oz</a></td>
+            <td class="ess-desc">Pyrantel for roundworms + hookworms. Repeat dose at 2 weeks.</td>
+            <td class="ess-price">$25</td>
+          </tr>
+          <tr>
+            <td class="ess-name"><a href="https://jefferspet.com/products/focus-cat-vax-3-plus-felv-1-dose" target="_blank" rel="noopener">Focus Cat Vax 3 + FeLV (single-dose) &times; 2</a></td>
+            <td class="ess-desc">FVRCP + FeLV combo, prime dose + 3-week booster. DIY subq.</td>
+            <td class="ess-price">$26</td>
+          </tr>
+          <tr>
+            <td class="ess-name">Cold-chain shipping (vaccines)</td>
+            <td class="ess-desc">Jeffers ships modified-live vaccines on ice. Required.</td>
+            <td class="ess-price">$20</td>
+          </tr>
+          <tr>
+            <td class="ess-name">22g needles + 3 mL syringes</td>
+            <td class="ess-desc">For DIY subq vaccine injection. Add to Jeffers cart.</td>
+            <td class="ess-price">$8</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="ess-group">
+        <h3>For you (the human) <span class="group-subtotal">subtotal ~$45</span></h3>
+        <table class="ess-table">
+          <tr>
+            <td class="ess-name"><a href="https://www.amazon.com/s?k=Hikari+PraziPro" target="_blank" rel="noopener">Hikari PraziPro (small bottle)</a></td>
+            <td class="ess-desc">Aquarium-grade praziquantel. Single dose for tapeworm prophylaxis.</td>
+            <td class="ess-price">$10</td>
+          </tr>
+          <tr>
+            <td class="ess-name"><a href="https://www.amazon.com/s?k=Pin-X+pinworm+pyrantel" target="_blank" rel="noopener">PIN RID 12-dose chewable (or generic)</a></td>
+            <td class="ess-desc">Pyrantel for roundworm + hookworm prophylaxis. Single dose.</td>
+            <td class="ess-price">$16</td>
+          </tr>
+          <tr>
+            <td class="ess-name">1% hydrocortisone cream</td>
+            <td class="ess-desc">Flea bite itch relief. Longs Pahoa or any pharmacy.</td>
+            <td class="ess-price">$5</td>
+          </tr>
+          <tr>
+            <td class="ess-name">Zyrtec (cetirizine) 30-count</td>
+            <td class="ess-desc">Non-drowsy antihistamine for systemic itch.</td>
+            <td class="ess-price">$15</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="ess-group">
+        <h3>Environment <span class="group-subtotal">subtotal ~$23</span></h3>
+        <table class="ess-table">
+          <tr>
+            <td class="ess-name"><a href="https://www.amazon.com/s?k=Adams+Flea+Tick+Home+Spray+24+oz" target="_blank" rel="noopener">Adams Flea &amp; Tick Home Spray 24 oz</a></td>
+            <td class="ess-desc">Indoor surfaces (lanai, bedroom, carpet). Methoprene IGR, 7-month residual.</td>
+            <td class="ess-price">$15</td>
+          </tr>
+          <tr>
+            <td class="ess-name"><a href="https://www.amazon.com/s?k=Black+Flag+yard+concentrate+ready+to+spray" target="_blank" rel="noopener">Black Flag Yard Concentrate 32 oz</a></td>
+            <td class="ess-desc">Outdoor / under-house. Pyriproxyfen IGR, 5,000 sqft, hose-end ready-to-spray.</td>
+            <td class="ess-price">$8</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="ess-tiers">
+        <h3>Three budget tiers</h3>
+        <div class="tier-row">
+          <span class="tier-name">Bare minimum</span>
+          <span class="tier-desc">Capstar + Elanco tapeworm + Adams + Black Flag + your bite relief + PraziPro. No vaccines, no advanced dewormers.</span>
+          <span class="tier-cost">~$104</span>
+        </div>
+        <div class="tier-row">
+          <span class="tier-name">Recommended essentials</span>
+          <span class="tier-desc">Everything in the three tables above, including the OTC FVRCP + FeLV vaccine series for Mr. Puff.</span>
+          <span class="tier-cost">~$197</span>
+        </div>
+        <div class="tier-row">
+          <span class="tier-name">Full belt-and-suspenders</span>
+          <span class="tier-desc">Recommended + Advantage II 6-month topical for Mr. Puff if she lets you touch her.</span>
+          <span class="tier-cost">~$267</span>
+        </div>
+      </div>
+
+      <div class="ess-group">
+        <h3>Optional add-ons (not in the totals above)</h3>
+        <table class="ess-table">
+          <tr>
+            <td class="ess-name"><a href="https://www.amazon.com/s?k=advantage+II+large+cat+6+pack" target="_blank" rel="noopener">Advantage II Large Cat 6-month</a></td>
+            <td class="ess-desc">Monthly topical (imidacloprid + pyriproxyfen). Only useful if she lets you touch her shoulder blades.</td>
+            <td class="ess-price optional">+$70</td>
+          </tr>
+          <tr>
+            <td class="ess-name"><a href="https://www.amazon.com/s?k=Seresto+collar+cat+8+month" target="_blank" rel="noopener">Seresto Cat Collar (8 months)</a></td>
+            <td class="ess-desc">Alternative to Advantage II. The only flea collar with real evidence. Skip the cheap ones, they're useless or toxic. Only viable if she lets you collar her and won't lose it.</td>
+            <td class="ess-price optional">+$60</td>
+          </tr>
+          <tr>
+            <td class="ess-name">Saccharomyces boulardii probiotic</td>
+            <td class="ess-desc">For YOU, only if you take antibiotics from the loophole pharmacy section. Skip otherwise.</td>
+            <td class="ess-price optional">+$20</td>
+          </tr>
+          <tr>
+            <td class="ess-name">Fancy Feast pate variety case</td>
+            <td class="ess-desc">Vehicle for hiding pills. Smell covers the medication taste. Case of 24 ~$22.</td>
+            <td class="ess-price optional">+$22</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="callout warn" style="margin-top: 1.25rem;">
+        <span class="callout-label">On flea collars</span>
+        Most flea collars are skipped on purpose: cheap ones (Hartz, Sergeant's, Bay Pet, etc.) are mostly ineffective and some have a history of toxicity reports. <strong>Seresto is the one exception</strong> &mdash; real evidence base, 8-month protection. But for an outdoor cat that comes by randomly, it only works if you can put it on her without her ditching it. The Capstar + Advantage II combo is more practical. Listed as optional above so you can pick.
+      </div>
+
+      <div class="callout info" style="margin-top: 1rem;">
+        <span class="callout-label">What to skip and why</span>
+        <strong>Hartz / Sergeant's spot-on flea drops</strong> &mdash; toxicity reports. <strong>Plain Raid Flea Killer (no "Plus")</strong> &mdash; no IGR, eggs hatch in 4 weeks. <strong>Anything with permethrin in the cat-applied section</strong> &mdash; lethal to cats. <strong>Carrier</strong> &mdash; pointless if you can't catch her. <strong>Stainless bowls / pet-safe paw wipes</strong> &mdash; you're not adopting her, she's a community cat.
+      </div>
+    </section>
 
     <!-- PRIORITY -->
     <section class="priority" id="priority">
