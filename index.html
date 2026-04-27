@@ -454,39 +454,89 @@
     font-size: 0.92rem;
   }
 
-  /* SECTION */
-  .section {
+  /* SECTION (collapsible details/summary card) */
+  details.section {
     background: var(--bg-card);
     border: 1px solid var(--border-subtle);
     border-radius: 14px;
-    padding: 2rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     transition: border-color 0.2s ease;
     scroll-margin-top: 1.5rem;
+    overflow: hidden;
   }
 
-  .section:hover { border-color: var(--border-strong); }
+  details.section[open] { border-color: var(--border-strong); }
+  details.section:hover { border-color: var(--border-strong); }
 
-  .section-header {
+  details.section summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 1.25rem 1.75rem;
     display: flex;
-    align-items: baseline;
-    justify-content: space-between;
+    align-items: center;
     gap: 1rem;
-    margin-bottom: 1.5rem;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid var(--border-subtle);
+    user-select: none;
+    transition: background 0.15s ease;
     flex-wrap: wrap;
   }
 
-  .section h2 {
+  details.section summary::-webkit-details-marker,
+  details.section summary::marker { display: none; content: ''; }
+
+  details.section summary:hover { background: var(--bg-card-hover); }
+
+  details.section summary h2 {
     font-family: 'Fraunces', serif;
-    font-size: 1.7rem;
+    font-size: 1.3rem;
     font-weight: 600;
-    letter-spacing: -0.025em;
-    line-height: 1.15;
+    letter-spacing: -0.02em;
+    flex: 1;
+    line-height: 1.2;
+    margin: 0;
   }
 
-  .section h2 .num {
+  details.section summary .num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    color: var(--accent-amber);
+    font-weight: 600;
+    min-width: 1.6rem;
+    text-align: center;
+    padding: 0.25rem 0.45rem;
+    background: var(--accent-amber-glow);
+    border-radius: 6px;
+    border: 1px solid rgba(251, 191, 36, 0.25);
+  }
+
+  details.section summary .section-sub {
+    color: var(--text-muted);
+    font-size: 0.78rem;
+    font-family: 'JetBrains Mono', monospace;
+    flex-basis: 100%;
+    margin-left: 2.5rem;
+  }
+
+  details.section summary .chevron {
+    font-size: 1.5rem;
+    color: var(--text-muted);
+    transition: transform 0.2s ease;
+    margin-left: auto;
+    line-height: 1;
+    font-weight: 300;
+  }
+
+  details.section[open] summary .chevron {
+    transform: rotate(90deg);
+    color: var(--accent-amber);
+  }
+
+  details.section .section-body {
+    padding: 0 1.75rem 1.75rem 1.75rem;
+    border-top: 1px solid var(--border-subtle);
+    padding-top: 1.5rem;
+  }
+
+  details.section h2 .num {
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.7em;
     color: var(--accent-amber);
@@ -494,10 +544,11 @@
     font-weight: 500;
   }
 
-  .section-sub {
-    color: var(--text-muted);
-    font-size: 0.85rem;
-    font-family: 'JetBrains Mono', monospace;
+  @media (max-width: 880px) {
+    details.section summary { padding: 1rem 1.25rem; gap: 0.6rem; }
+    details.section summary h2 { font-size: 1.1rem; }
+    details.section summary .section-sub { margin-left: 0; font-size: 0.72rem; }
+    details.section .section-body { padding: 1.25rem 1.25rem 1.5rem 1.25rem; }
   }
 
   .section h3 {
@@ -942,7 +993,7 @@
     <section class="essentials" id="holy-grail" style="border-color: var(--accent-amber); box-shadow: 0 0 60px rgba(251, 191, 36, 0.1), var(--shadow-card);">
       <div class="essentials-header">
         <h2>Holy Grail Finds</h2>
-        <span class="total-pill" style="background: var(--accent-amber);">~$160 add-on kit</span>
+        <span class="total-pill" style="background: var(--accent-amber);">~$280 full add-on kit</span>
       </div>
       <p class="ess-sub">Specific high-value OTC items most people don't know exist. Each one quietly replaces a vet visit. All verified live in Chrome with prices.</p>
 
@@ -989,12 +1040,63 @@
       </div>
 
       <div class="ess-group">
+        <h3>Emergency / sick-cat finds (the second wave)</h3>
+        <table class="ess-table">
+          <tr>
+            <td class="ess-name"><a href="https://www.amazon.com/s?k=lactated+ringers+1L+vet+supply+subcutaneous" target="_blank" rel="noopener">Lactated Ringers 1L bag (B Braun or Vetivex)</a> + <a href="https://www.amazon.com/s?k=IV+drip+set+veterinary+18g+needle" target="_blank" rel="noopener">IV drip set + 18g needles</a></td>
+            <td class="ess-desc"><strong>The biggest quiet life-saver for outdoor cats.</strong> If Mr. Puff ever shows up dehydrated, lethargic, or post-fight, sub-Q fluids buy you 24-48 hrs to get to a vet OR can be the entire treatment for mild cases. 100-150 mL warmed saline under the loose skin between the shoulder blades. YouTube has clear demos. Used by every TNR caretaker.</td>
+            <td class="ess-price">$30</td>
+          </tr>
+          <tr>
+            <td class="ess-name"><a href="https://www.amazon.com/s?k=L-lysine+cat+supplement+500mg+URI" target="_blank" rel="noopener">L-Lysine for cats (gel or treats)</a></td>
+            <td class="ess-desc">For feline herpes virus (FHV-1) flare-ups: sneezing, runny eyes, nasal congestion. Real evidence base, especially in shelter and TNR populations. ~250-500 mg daily during a flare-up. Hide in food, lickable gel, or chewy treat formats.</td>
+            <td class="ess-price">$16-23</td>
+          </tr>
+          <tr>
+            <td class="ess-name"><a href="https://www.amazon.com/s?k=famotidine+pepcid+ac+10mg" target="_blank" rel="noopener">Famotidine (Pepcid AC) 10 mg</a></td>
+            <td class="ess-desc">Safe for cats. <strong>Quarter of a 10 mg tablet (2.5 mg) once daily</strong> for acute GI upset, vomiting, or stress-related stomach issues. Same drug used by vets, no Rx needed. WELMATE generic is $10 for 200 tabs.</td>
+            <td class="ess-price">$10</td>
+          </tr>
+          <tr>
+            <td class="ess-name"><a href="https://www.amazon.com/s?k=Kwik+Stop+styptic+powder+pet" target="_blank" rel="noopener">Kwik Stop Styptic Powder</a></td>
+            <td class="ess-desc">Stops bleeding instantly. Cat fight scratches, broken nail, small abrasions. Apply directly with a Q-tip. Includes benzocaine for pain. First-aid kit essential.</td>
+            <td class="ess-price">$9</td>
+          </tr>
+          <tr>
+            <td class="ess-name"><a href="https://www.amazon.com/s?k=Purina+FortiFlora+cat+probiotic" target="_blank" rel="noopener">Purina Pro Plan FortiFlora</a></td>
+            <td class="ess-desc">The one cat probiotic with real vet evidence. Use for 1-2 weeks after every dewormer dose to restore gut flora. Single-serving packets, sprinkle on food. The smell is a bonus appetite stimulant.</td>
+            <td class="ess-price">$31</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="ess-group">
         <h3>Future-state stuff (optional)</h3>
         <table class="ess-table">
           <tr>
             <td class="ess-name"><a href="https://www.amazon.com/s?k=Feliway+classic+diffuser+30+day" target="_blank" rel="noopener">Feliway classic diffuser (starter)</a></td>
             <td class="ess-desc">Synthetic facial pheromone. Real evidence base for reducing cat stress and territory marking. Useful when/if Mr. Puff and your Maine Coon ever do the slow-introduction protocol. Plug-in 30-day diffuser, refills ~$15.</td>
             <td class="ess-price">$25</td>
+          </tr>
+          <tr>
+            <td class="ess-name"><a href="https://www.amazon.com/s?k=Sentry+Calming+Collar+cat+pheromone" target="_blank" rel="noopener">Sentry Calming Collar (cheaper Feliway alt)</a></td>
+            <td class="ess-desc">Pheromone collar form factor. Cheaper than a diffuser but only effective in the cat's immediate area. Useful as a budget alternative if you want pheromone support without buying refills monthly.</td>
+            <td class="ess-price">$18-44</td>
+          </tr>
+          <tr>
+            <td class="ess-name"><a href="https://www.amazon.com/s?k=Royal+Canin+Recovery+RS+cat+critical+care" target="_blank" rel="noopener">Royal Canin Recovery / Hills A/D recovery food</a></td>
+            <td class="ess-desc">High-calorie syringe-feedable food for sick / underweight / post-illness cats. If Mr. Puff ever shows up too thin or recovering from anything, this is what to feed. Soft enough to syringe if needed.</td>
+            <td class="ess-price">$29</td>
+          </tr>
+          <tr>
+            <td class="ess-name"><a href="https://www.amazon.com/s?k=manuka+honey+UMF+16+medical+wound+grade" target="_blank" rel="noopener">Manuka honey UMF 16+ (or Wedderspoon)</a></td>
+            <td class="ess-desc">Real wound-healing evidence base. Apply topically to small wounds. Cat-safe (small amounts). Wedderspoon brand at $24 is plenty for first aid use.</td>
+            <td class="ess-price">$24</td>
+          </tr>
+          <tr>
+            <td class="ess-name"><a href="https://www.amazon.com/s?k=cat+enzymatic+cleaner+Nature%27s+Miracle+urine" target="_blank" rel="noopener">Nature's Miracle Cat Urine Destroyer</a></td>
+            <td class="ess-desc">If Mr. Puff ever marks indoors. Enzymatic cleaner breaks down urine proteins so other cats don't re-mark the spot. Essential for keeping a multi-cat-adjacent house from becoming a litter box.</td>
+            <td class="ess-price">$13</td>
           </tr>
           <tr>
             <td class="ess-name">Pediatric oral syringes (1/3/10 mL pack)</td>
@@ -1049,11 +1151,14 @@
     </section>
 
     <!-- REALITY -->
-    <section class="section" id="reality">
-      <div class="section-header">
-        <h2><span class="num">01</span>The Situation</h2>
+    <details class="section" id="reality">
+      <summary>
+        <span class="num">01</span>
+        <h2>The Situation</h2>
         <span class="section-sub">whats-actually-going-on.md</span>
-      </div>
+        <span class="chevron">›</span>
+      </summary>
+      <div class="section-body">
       <p>Mr. Puff is an adolescent ear-tipped community cat with a heavy flea infestation. He drops by on his own schedule, has come inside for full days twice, and likely hasn't been to a vet since (or maybe ever &mdash; the ear tip doesn't tell us if he was vaccinated at the same time). The plan is <strong>to just treat him at home</strong>, with everything available OTC and the vet only as a fallback for emergencies.</p>
       <ul>
         <li>The <strong>ear tip</strong> tells you he was spayed/neutered during a TNR cycle. It does NOT tell you his FIV/FeLV status, and it does NOT necessarily mean he got vaccines &mdash; budget TNR programs often skip both because of cost.</li>
@@ -1065,14 +1170,18 @@
         <span class="callout-label">Assume status unknown</span>
         Treat Mr. Puff as if he could be FIV-positive and FeLV-positive for planning purposes. That's why you keep him and the Maine Coon separated, and why you wash hands between handling them.
       </div>
-    </section>
+      </div>
+    </details>
 
     <!-- DIY VS VET -->
-    <section class="section" id="diy-vs-vet">
-      <div class="section-header">
-        <h2><span class="num">02</span>DIY vs Vet</h2>
+    <details class="section" id="diy-vs-vet">
+      <summary>
+        <span class="num">02</span>
+        <h2>DIY vs Vet</h2>
         <span class="section-sub">what-you-can-substitute.md</span>
-      </div>
+        <span class="chevron">›</span>
+      </summary>
+      <div class="section-body">
 
       <h3>What you CAN do at home</h3>
       <div class="table-wrap">
@@ -1104,14 +1213,18 @@
         <span class="callout-label">Boundary</span>
         You can do all routine preventive care + minor wound care + symptom-based triage at home. You cannot diagnose or treat internal disease without imaging or labs.
       </div>
-    </section>
+      </div>
+    </details>
 
     <!-- MR PUFF -->
-    <section class="section" id="mr-puff">
-      <div class="section-header">
-        <h2><span class="num">03</span>Mr. Puff Care</h2>
+    <details class="section" id="mr-puff">
+      <summary>
+        <span class="num">03</span>
+        <h2>Mr. Puff Care</h2>
         <span class="section-sub">opportunistic-otc.md</span>
-      </div>
+        <span class="chevron">›</span>
+      </summary>
+      <div class="section-body">
 
       <div class="callout warn">
         <span class="callout-label">Senior cat with heavy flea load</span>
@@ -1188,14 +1301,18 @@
         <li><strong>Ears:</strong> dark crumbly debris = mites. Clean with mineral oil on a cotton ball.</li>
         <li><strong>Wood's lamp</strong> ($15 on Amazon) for ringworm screening. M. canis glows green under UV in ~50% of cases.</li>
       </ul>
-    </section>
+      </div>
+    </details>
 
     <!-- HEAVY LOAD + UNVAXXED -->
-    <section class="section" id="heavy-load">
-      <div class="section-header">
-        <h2><span class="num">04</span>Heavy Flea Load + Probably Unvaxxed</h2>
+    <details class="section" id="heavy-load">
+      <summary>
+        <span class="num">04</span>
+        <h2>Heavy Flea Load + Probably Unvaxxed</h2>
         <span class="section-sub">two-things-to-fix.md</span>
-      </div>
+        <span class="chevron">›</span>
+      </summary>
+      <div class="section-body">
       <p>The two real problems with Mr. Puff specifically: the load on him right now, and the gap in his protection. Both fixable at home.</p>
 
       <h3>Flea-anemia gum-check (do this now)</h3>
@@ -1223,14 +1340,18 @@
         <li>Skip rabies (Hawaii is rabies-free, must legally be given by a vet anyway)</li>
         <li>Watch for reaction in the 24 hrs after each dose: swelling at injection site, lethargy, vomiting. Rare but real. If it happens, call a mobile vet.</li>
       </ul>
-    </section>
+      </div>
+    </details>
 
     <!-- SEPARATION -->
-    <section class="section" id="separation">
-      <div class="section-header">
-        <h2><span class="num">05</span>Keeping Them Separated</h2>
+    <details class="section" id="separation">
+      <summary>
+        <span class="num">05</span>
+        <h2>Keeping Them Separated</h2>
         <span class="section-sub">no-contact.md</span>
-      </div>
+        <span class="chevron">›</span>
+      </summary>
+      <div class="section-body">
       <p>The Maine Coon and Mr. Puff have stayed separate so far. That's the win. The goal is to keep it that way until you have an FIV/FeLV result on Mr. Puff (which might be a long time from now).</p>
 
       <h3>What's working, keep doing</h3>
@@ -1251,14 +1372,18 @@
         <span class="callout-label">Status</span>
         No exposure means no Maine Coon vaccine catch-up needed for Mr. Puff's sake specifically. Keep his routine FVRCP boosters current per the AAFP schedule (every 1-3 years), but no urgency-driven additions.
       </div>
-    </section>
+      </div>
+    </details>
 
     <!-- BEDROOM -->
-    <section class="section" id="bedroom">
-      <div class="section-header">
-        <h2><span class="num">06</span>Bedroom Decon</h2>
+    <details class="section" id="bedroom">
+      <summary>
+        <span class="num">06</span>
+        <h2>Bedroom Decon</h2>
         <span class="section-sub">flea-egg-reservoir.md</span>
-      </div>
+        <span class="chevron">›</span>
+      </summary>
+      <div class="section-body">
       <p>Mr. Puff has slept on the bed twice with a heavy flea load. Eggs hatch in 2-14 days in Hawaii's climate. The bed is a reservoir.</p>
       <ol>
         <li><strong>Strip the bed.</strong> Hot wash everything: sheets, pillowcases, comforter, mattress pad. If anything is dry-clean only, take it now.</li>
@@ -1268,14 +1393,18 @@
         <li><strong>Vacuum the bedroom floor daily for 2 weeks</strong>, dump canister outside each time. Flea pupae hatch in response to vibration; vacuuming triggers them, then sucks them up.</li>
         <li><strong>Wash blankets and throw pillows weekly going forward</strong>, hot water, regardless of whether she's been in.</li>
       </ol>
-    </section>
+      </div>
+    </details>
 
     <!-- ENVIRONMENT -->
-    <section class="section" id="environment">
-      <div class="section-header">
-        <h2><span class="num">07</span>Yard &amp; Home</h2>
+    <details class="section" id="environment">
+      <summary>
+        <span class="num">07</span>
+        <h2>Yard &amp; Home</h2>
         <span class="section-sub">environment-first.md</span>
-      </div>
+        <span class="chevron">›</span>
+      </summary>
+      <div class="section-body">
 
       <h3>The yard (the source)</h3>
       <ul>
@@ -1302,14 +1431,18 @@
         <span class="callout-label">Permethrin warning</span>
         Permethrin is in many dog flea products and household sprays. <strong>Lethal to cats</strong>, even small exposures. If you treat with anything containing permethrin, both cats need to be out for ~24 hrs and surfaces fully dry. The Adams + Black Flag products listed here use IGRs + pyrethrins (different from permethrin) and are cat-safe once dry.
       </div>
-    </section>
+      </div>
+    </details>
 
     <!-- HUMAN -->
-    <section class="section" id="human">
-      <div class="section-header">
-        <h2><span class="num">08</span>For You</h2>
+    <details class="section" id="human">
+      <summary>
+        <span class="num">08</span>
+        <h2>For You</h2>
         <span class="section-sub">human-health.md</span>
-      </div>
+        <span class="chevron">›</span>
+      </summary>
+      <div class="section-body">
 
       <h3>Bite and scratch protocol</h3>
       <ul>
@@ -1458,14 +1591,18 @@
         <li>Don't let her lick your mouth or open wounds. Bartonella also transmits oral-mucosal.</li>
         <li>If pregnant or immunocompromised, the toxoplasmosis risk from her feces is real &mdash; use gloves for any cleanup, or have someone else handle it.</li>
       </ul>
-    </section>
+      </div>
+    </details>
 
     <!-- ESCALATE -->
-    <section class="section" id="escalate">
-      <div class="section-header">
-        <h2><span class="num">09</span>When to Escalate to a Vet</h2>
+    <details class="section" id="escalate">
+      <summary>
+        <span class="num">09</span>
+        <h2>When to Escalate to a Vet</h2>
         <span class="section-sub">no-vet-but-emergency.md</span>
-      </div>
+        <span class="chevron">›</span>
+      </summary>
+      <div class="section-body">
 
       <p>Heavy parasite load + unvaxxed = real risk of complications even on an otherwise healthy young cat. If you're on the fence, call.</p>
 
@@ -1503,14 +1640,18 @@
           <div class="rc-meta">(808) 935-3400</div>
         </div>
       </div>
-    </section>
+      </div>
+    </details>
 
     <!-- SHOPPING -->
-    <section class="section" id="shopping">
-      <div class="section-header">
-        <h2><span class="num">09</span>Shopping List (revised)</h2>
+    <details class="section" id="shopping">
+      <summary>
+        <span class="num">09</span>
+        <h2>Shopping List (revised)</h2>
         <span class="section-sub">~$250 total to set up</span>
-      </div>
+        <span class="chevron">›</span>
+      </summary>
+      <div class="section-body">
 
       <h3>Pahoa today</h3>
       <ul>
@@ -1575,14 +1716,18 @@
         <span class="callout-label">Skip</span>
         Carrier (no point right now), stainless bowls (you're not "adopting" her), pet-safe paw wipes (she's not coming inside in a controlled way). Skip ALL Hartz brand spot-ons (long history of cat injuries).
       </div>
-    </section>
+      </div>
+    </details>
 
     <!-- VETS -->
-    <section class="section" id="vets">
-      <div class="section-header">
-        <h2><span class="num">10</span>Vet Contacts (for the day she's catchable)</h2>
+    <details class="section" id="vets">
+      <summary>
+        <span class="num">10</span>
+        <h2>Vet Contacts (for the day she's catchable)</h2>
         <span class="section-sub">phone-list.md</span>
-      </div>
+        <span class="chevron">›</span>
+      </summary>
+      <div class="section-body">
       <div class="resource-grid">
         <a href="https://bigislandpetcarecenter.org/" target="_blank" rel="noopener" class="resource-card">
           <div class="rc-label">PRIMARY</div>
@@ -1619,14 +1764,18 @@
         <span class="callout-label">Pahoa Animal Hospital is closed to new clients</span>
         Waitlist only as of early 2026. Do not call them first. Big Island Pet Care Center in Keaau (15 min north) is the working primary.
       </div>
-    </section>
+      </div>
+    </details>
 
     <!-- SOURCES -->
-    <section class="section" id="sources">
-      <div class="section-header">
-        <h2><span class="num">11</span>Sources &amp; Further Reading</h2>
+    <details class="section" id="sources">
+      <summary>
+        <span class="num">11</span>
+        <h2>Sources &amp; Further Reading</h2>
         <span class="section-sub">references.md</span>
-      </div>
+        <span class="chevron">›</span>
+      </summary>
+      <div class="section-body">
       <ul>
         <li><a href="https://www.fda.gov/animal-veterinary/animal-health-literacy/fact-sheet-pet-owners-and-veterinarians-about-potential-adverse-events-associated-isoxazoline-flea" target="_blank" rel="noopener">FDA fact sheet on isoxazoline neurological events (Bravecto, Credelio, etc.)</a></li>
         <li><a href="https://www.fda.gov/animal-veterinary/cvm-updates/animal-drug-safety-communication-fda-alerts-pet-owners-and-veterinarians-about-potential-neurologic" target="_blank" rel="noopener">FDA Animal Drug Safety Communication on isoxazolines</a></li>
@@ -1635,10 +1784,40 @@
         <li><a href="https://www.cdc.gov/toxoplasmosis/about/index.html" target="_blank" rel="noopener">CDC on Toxoplasmosis</a></li>
         <li><a href="https://www.revivalanimal.com/learning-center/feline-leukemia-virus" target="_blank" rel="noopener">Revival Animal Health learning center: Feline Leukemia Virus</a></li>
       </ul>
-    </section>
+      </div>
+    </details>
 
   </main>
 </div>
+
+<script>
+  (function() {
+    function openTarget() {
+      const hash = location.hash;
+      if (!hash || hash === '#') return;
+      try {
+        const target = document.querySelector(hash);
+        if (target && target.tagName === 'DETAILS') {
+          target.open = true;
+          requestAnimationFrame(() => {
+            target.scrollIntoView({behavior: 'smooth', block: 'start'});
+          });
+        }
+      } catch (e) {}
+    }
+    window.addEventListener('hashchange', openTarget);
+    window.addEventListener('load', openTarget);
+    document.addEventListener('click', function(e) {
+      const link = e.target.closest('a[href^="#"]');
+      if (!link) return;
+      const id = link.getAttribute('href').slice(1);
+      const target = document.getElementById(id);
+      if (target && target.tagName === 'DETAILS') {
+        target.open = true;
+      }
+    });
+  })();
+</script>
 
 <footer>
   <div class="cat-paw">∴</div>
