@@ -11,6 +11,8 @@ The original "scheduled vet visit" framing doesn't fit a cat that comes and goes
 ## Files (in priority order)
 
 - **[comprehensive-otc-care.md](./comprehensive-otc-care.md)** - the deep playbook. Read this one.
+- [praziquantel-sourcing.md](./praziquantel-sourcing.md) - deep dive on every realistic source of praziquantel: OTC tablets, bulk koi-grade powder, USP-grade powder, compounding pharmacies, and where the "food-safe" framing actually lands. Cost-per-dose comparison + decision matrix.
+- [ivermectin-sourcing.md](./ivermectin-sourcing.md) - tablets-only deep dive for ivermectin: veterinary chewables (Heartgard cats discontinuing, Tri-Heart Plus generic for dogs), human Rx generics via GoodRx, US OTC by state (TN/AR/ID/LA/TX), Mexico Ivexterm, Sacred Purity USP, plus the cat safety profile that actually matters.
 - [random-visitor-plan.md](./random-visitor-plan.md) - lighter version, focused on the days she's NOT inside (environmental flea control + Capstar dosing). Good complement.
 - [shopping-list.md](./shopping-list.md) - every item from the original list mapped to a Pahoa or Hilo store.
 - [vets.md](./vets.md) - vet options ranked, kept for the eventual "she's catchable now" day or any emergency escalation.
