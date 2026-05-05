@@ -13,7 +13,8 @@ Goal: identifiable, not-overpriced sources of ivermectin **tablets** (or chewabl
 - **No-Rx international: Ivexterm 6 mg 2-pack** from Mexipharmacy, $16.42 USD ($8.21/tab). Bausch Health manufacture, ships to US.
 - **Best international generic value: Indian Cipla Ivermectol 12 mg** at Apollo/MedPlus/PharmEasy (~₹83-318/strip = ~$1-4) but US import is the friction.
 - **Long-shelf-life household stockpile: Sacred Purity USP 5 mg, 1000 ct for $649.99** ($0.65/pill). Best per-mg deal of any tablet source.
-- **Skip:** horse paste (not tablets, fatal-overdose-risk in cats), AllDayChemist (not CIPA-verified), random Aliexpress (counterfeit risk per TGA Australia).
+- **Influencer-pitched (Tim Dillon, RSBN, etc.):** The Wellness Company (TWC) Contagion Emergency Kit at $324.99 with code TIMD, or All Family Pharmacy at $3/capsule with code RSBN10. Both are real licensed pharmacies; both cost meaningfully more than Walmart-via-GoodRx for the same molecule.
+- **Skip:** horse paste (not tablets, fatal-overdose-risk in cats), AllDayChemist (not CIPA-verified), random Aliexpress (counterfeit risk per TGA Australia), and **SpeakWithAnMD / AFLDS / Ravkoo** (history of non-fulfillment, "predatory" per House Coronavirus Subcommittee).
 
 ## The cat-specific catch
 
@@ -139,6 +140,71 @@ If you don't have a primary-care doctor or don't want to make an appointment, th
 | Felix Health (Canada) | $20-50 CAD | Asynchronous, mostly Canadian patients | Uses Canadian-pharmacy fulfillment |
 
 The pattern is: pay $35-60 once for a telehealth visit, get the Rx, then fill at the cheapest pharmacy via GoodRx coupon. Total cost: ~$60 visit + $27.75 fill = **~$87 for 20 tabs from scratch with no doctor relationship**. Repeat fills don't need new visits if the Rx has refills.
+
+## Influencer-pitched pharmacies (Tim Dillon, Alex Jones-adjacent, RSBN, etc.)
+
+A separate market segment exists: telehealth + pharmacy bundles marketed via right-wing podcasts and influencer codes. Tim Dillon, Tucker Carlson-adjacent figures, RSBN, Charlie Kirk, Kari Lake, Laura Loomer, and Naomi Wolf all do ad reads or sponsored pitches for these. Worth knowing what they actually sell, what's legitimate, and what to avoid — because the audience that hears these pitches often doesn't compare to GoodRx-at-Walmart.
+
+### The Wellness Company (twc.health)
+
+The flagship of the segment. Florida-based, founded June 2022. Operates its own licensed compounding pharmacy and telehealth.
+
+- **Pitched by:** Tim Dillon (twc.health/timd, code **TIMD** for ~$30 off + free shipping), Kari Lake, Laura Loomer, Naomi Wolf, plus a long tail of MAGA-adjacent podcasters. Right-wing-influencer codes typically run 10-15% off.
+- **Chief Scientific Officer:** **Dr. Peter McCullough**. Cardiologist who advocated heavily for ivermectin and HCQ during COVID. The American Board of Internal Medicine **revoked both his board certifications in January 2025** for promoting medical misinformation. The ABIM ruling is the most relevant data point about TWC's clinical authority.
+- **Product mix:**
+  - **Contagion Emergency Kit: $324.99** — bundles ivermectin + hydroxychloroquine + azithromycin (Z-pak) + oseltamivir (Tamiflu) + budesonide + nebulizer. Members save 15%. Telehealth intake required.
+  - **Medical Emergency Kit: $299.99** — broader preparedness kit.
+  - **Ivermectin + Mebendazole: $349.99** — bestselling combo, marketed for "parasite cleanse" and "cancer-adjacent" research positioning (TWC promotes the recent Breitbart-covered ivermectin-cancer study).
+  - **Standalone Ivermectin Rx Collection** — separate ivermectin-only products at varying strengths.
+- **Process:** order online, complete a 2-minute medical intake form after checkout, licensed provider reviews and (usually) prescribes, fulfilled by TWC's pharmacy.
+- **Honest take:** the pharmacy itself is licensed and the drug is real. The pricing is **substantially higher than mainstream** — the $324.99 Contagion Kit covers maybe $30-40 worth of generic drugs at GoodRx-at-Walmart prices. You're paying for the bundling, the political alignment, and the McCullough imprimatur. The kits are a real product that ships, not vaporware.
+
+### All Family Pharmacy (allfamilypharmacy.com)
+
+Family-owned licensed US pharmacy in Boca Raton, Florida, 5+ years in business. Cleanest of the influencer-pitched segment from a legitimacy standpoint.
+
+- **Pitched by:** RSBN (Right Side Broadcasting Network) with code **RSBN10** for 10% off. Also affiliated with various RSBN-adjacent influencers.
+- **Product:** ivermectin starting at **$3 per capsule** (some pages say $2). Standalone, not a bundled kit.
+- **Process:** secure online medical intake form → licensed practitioner telehealth evaluation → prescription if approved → in-house fulfillment.
+- **Reviews:** mostly positive on Trustpilot. Customers cite easy process, fast shipping, best prices, sales.
+- **Honest take:** legitimate licensed US pharmacy with telehealth-bundled fulfillment. $3/capsule is meaningfully more than GoodRx-at-Walmart ($1.39/tab) but cheaper than TWC's bundles. If you want a politically-aligned-branded option without the McCullough controversy, this is the cleanest pick.
+
+### SpeakWithAnMD / America's Frontline Doctors / Ravkoo Pharmacy
+
+The COVID-era bundled service. **Avoid.**
+
+- **Pitched by:** historically promoted via anti-vaccine and anti-mask Facebook/Reddit groups, AFLDS-affiliated influencers. Stella Immanuel was the highest US ivermectin prescriber via this route.
+- **Cost:** $90 phone consultation with an AFLDS-trained physician.
+- **Fulfillment:** Ravkoo Pharmacy (Florida-based pharmacy chain), formerly the AFLDS partner.
+- **Big red flags:**
+  - Documented pattern of **non-fulfillment**. Customers report paying $90 and never receiving the prescription. Multiple Trustpilot complaints describe the consultation happening, but no Rx ever being filled.
+  - The **House Coronavirus Subcommittee** called AFLDS, Ravkoo, and SpeakWithAnMD "predatory actors" in 2021.
+  - **Hacked data** in 2021 exposed $8.5 million in dubious COVID-treatment sales in 10 months: $4.7M ivermectin, $2.4M azithromycin, $1.2M HCQ.
+  - Ravkoo claimed it had ended the AFLDS affiliation on Sept 2, 2021, but the leaked data showed 268 AFLDS prescriptions still flowing through Ravkoo through Sept 11.
+  - "Excessive prices" cited in customer complaints — significantly above standard pharmacy retail.
+- **Honest take:** skip. Even if the service is technically functional today, the legacy is enough to deprioritize against TWC, All Family Pharmacy, or any mainstream option.
+
+### Alex Jones / Infowars
+
+- **Infowars Store** (infowarsstore.com) sells supplements (zinc, colloidal silver, "DNA Force Plus," etc.) but **does not directly sell ivermectin** — it's a regulated drug and Infowars doesn't operate a licensed pharmacy.
+- The **NY Attorney General forced Infowars to stop selling fake COVID treatments** in March 2020 (separate enforcement action over the supplement claims).
+- Alex Jones famously gobbled ivermectin tablets on-air in September 2021 during a defense-of-Joe-Rogan rant. The tablets came from his personal stash, not an Infowars product.
+- **No documented Infowars partnership with a specific ivermectin pharmacy.** Infowars listeners who want ivermectin typically use TWC, All Family Pharmacy, or one of the other right-wing-adjacent options independently.
+
+### Side-by-side comparison
+
+| Source | Per-tab cost (3 mg basis) | Legitimacy | Bundled product? |
+|--------|----------------------------|------------|-------------------|
+| Walmart + GoodRx | $1.39/tab | FDA-approved, NDC-traceable | No |
+| Cost Plus Drugs | ~$3/tab | FDA-approved, transparent pricing | No |
+| All Family Pharmacy | $3/capsule | Licensed US pharmacy, mostly positive reviews | No (standalone) |
+| The Wellness Company (standalone) | varies, generally premium | Licensed compound pharmacy, McCullough-led | Yes (kits available) |
+| TWC Contagion Emergency Kit | $324.99 (bundled, ~$30-40 generic equivalent) | Licensed compound, premium price for bundling + politics | Yes |
+| SpeakWithAnMD / Ravkoo | $90 consult + Rx fee | History of non-fulfillment, regulatory scrutiny | No |
+| Mexipharmacy Ivexterm | $8.21/tab | Bausch Health branded, Mexican OTC | No |
+| Sacred Purity USP 1000 ct | $0.65/tab | USP grade, COA, "not for human consumption" disclaimer | No |
+
+**The takeaway:** if you're already in the influencer-pitched audience and ready to buy from TWC or All Family Pharmacy, you're not wrong that they ship real product — you're paying a premium. For pure pharmacology, GoodRx-at-Walmart is the same molecule at one-tenth the bundled-kit price. The TWC kit makes sense if you specifically want the bundled HCQ + Tamiflu + nebulizer preparedness package; otherwise, the math heavily favors mainstream sources.
 
 ## US OTC by state
 
@@ -368,6 +434,23 @@ Whatever route you pick, verify what you receive:
 - [PharmEasy India — Ivermectol 12 mg](https://pharmeasy.in/online-medicine-order/ivermectol-12mg-strip-of-2-tablets-51395)
 - [Healing Pharma India — Iverheal 12 mg](https://www.healingpharma.in/product/iverheal-12mg/)
 - [AllDayChemist — Ivermectin search](https://www.alldaychemist.com/catalogsearch/result/?q=ivermectin) (use cautiously)
+
+### Influencer-pitched pharmacies
+- [The Wellness Company — Tim Dillon landing](https://www.twc.health/pages/timd)
+- [The Wellness Company — Ivermectin Collection](https://www.twc.health/collections/ivermectin-collection)
+- [The Wellness Company — Contagion Emergency Kit ($324.99)](https://www.twc.health/products/contagion-emergency-kit)
+- [The Wellness Company — Dr. Peter McCullough (CSO)](https://www.twc.health/pages/dr-peter-mccullough)
+- [Wikipedia — Peter A. McCullough (ABIM revoked board certs Jan 2025)](https://en.wikipedia.org/wiki/Peter_A._McCullough)
+- [Daily Beast — TWC spruiked by Kari Lake, Laura Loomer, Naomi Wolf](https://www.thedailybeast.com/the-wellness-company-is-being-spruiked-by-kari-lake-laura-loomer-naomi-wolf-and-others/)
+- [Daily Dot — TWC Contagion kits + bird flu hype](https://dailydot.com/contagion-kit-the-wellness-company-bird-flu)
+- [All Family Pharmacy — Ivermectin](https://allfamilypharmacy.com/ivermectin/)
+- [All Family Pharmacy — RSBN partnership](https://allfamilypharmacy.com/rsbn/)
+- [SpeakWithAnMD landing page](http://speakwithanmd.us/)
+- [The Intercept — Right-wing telehealth + Ravkoo $4.7M ivermectin sales](https://theintercept.com/2021/09/28/covid-telehealth-hydroxychloroquine-ivermectin-hacked/)
+- [NBC News — Ivermectin demand at SpeakWithAnMD](https://www.nbcnews.com/tech/tech-news/ivermectin-demand-drives-trump-telemedicine-website-rcna1791)
+- [Becker's Hospital Review — Telehealth $15M+ from ivermectin/HCQ](https://www.beckershospitalreview.com/telehealth/telehealth-companies-rake-in-15m-from-patients-looking-for-ivermectin-hydroxychloroquine.html)
+- [TIME — Right-Wing Doctors and AFLDS lawsuits](https://time.com/6278831/ivermectin-americas-frontline-doctors-lawsuits-covid-19/)
+- [NY AG — Cease-and-desist to Alex Jones for fake COVID treatments](https://ag.ny.gov/press-release/2020/attorney-general-james-orders-alex-jones-stop-selling-fake-coronavirus-treatments)
 
 ### Counterfeit & quality
 - [PMC / Drug Testing and Analysis — Substandard and Falsified Ivermectin](https://analyticalsciencejournals.onlinelibrary.wiley.com/doi/abs/10.1002/dta.3618)
